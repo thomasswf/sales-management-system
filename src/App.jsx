@@ -13,13 +13,20 @@ import {
 import AnalyticsDashboard from './components/AnalyticsDashboard.jsx'
 import './App.css'
 
-function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
-  const [user, setUser] = useState(null)
-  const [salesData, setSalesData] = useState([])
-  const [loading, setLoading] = useState(false)
-  const [activeTab, setActiveTab] = useState('dashboard')
-  const [showAddTransaction, setShowAddTransaction] = useState(false)
+const [isAuthenticated, setIsAuthenticated] = useState(true)
+const [user, setUser] = useState({
+  name: 'Local Tester',
+  email: 'tester@localhost',
+  picture: 'https://via.placeholder.com/40'
+})
+const [salesData, setSalesData] = useState([
+  { id: 1, amount: 100, tip: 10, staff: 'S01', method: 'Cash', date: '2025-06-20' },
+  { id: 2, amount: 250, tip: 15, staff: 'S02', method: 'Credit Card', date: '2025-06-19' },
+])
+const [loading, setLoading] = useState(false)
+const [activeTab, setActiveTab] = useState('dashboard')
+const [showAddTransaction, setShowAddTransaction] = useState(false)
+
 
   // Mock authentication function
   const handleGoogleLogin = async () => {
